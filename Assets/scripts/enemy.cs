@@ -5,11 +5,12 @@ using UnityEngine;
 public class enemy : MonoBehaviour {
 
 	[SerializeField] float speed = 0.5f;
+
 	Rigidbody2D enemyBody;
 
 	Animator animator;
 
-	bool isDead = false;
+	bool stopMovement = false;
 
 	// Use this for initialization
 	void Start () {
@@ -19,7 +20,7 @@ public class enemy : MonoBehaviour {
 	
 	// Update is called once per frame
 	void FixedUpdate () {
-		if (!isDead) {
+		if (!stopMovement) {
 			transform.Translate(Vector2.right * speed * Time.deltaTime);
 		}	
 	}
@@ -28,10 +29,18 @@ public class enemy : MonoBehaviour {
 		switch(col.gameObject.name) {
 			case "rocket":
 				animator.SetBool("isDying", true);
-				isDead = true;
+				stopMovement = true;
 				break;
-			case "crate":
+			case "fort":
+				Debug.Log("hit fort");
+				animator.SetBool("atEnd", true);
+				stopMovement = true;
+				Invoke("KillEnemy", 1f);
 				break;
 		}
+	}
+
+	private void KillEnemy(){
+		Destroy(gameObject);
 	}
 }
