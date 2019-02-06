@@ -7,6 +7,7 @@ TextureImporter:
     21300004: wall
     21300006: floor
     21300008: crate
+    21300010: sword
   externalObjects: {}
   serializedVersion: 5
   mipmaps:
@@ -175,13 +176,33 @@ TextureImporter:
         width: 15
         height: 20
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
       spriteID: fe83308e4257348b8a4fd6a0134e0c1d
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sword
+      rect:
+        serializedVersion: 2
+        x: 163
+        y: 193
+        width: 10
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3141d38a5cb424dc9bf6d0a0ac62f433
       vertices: []
       indices: 
       edges: []
